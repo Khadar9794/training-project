@@ -1,0 +1,18 @@
+<h3>center details</h3>
+
+<form #idform=ngForm (ngSubmit)=findCenter(idform)>
+
+    <label>Center Id</label>
+    <input type="number" name="centerid" ngModel>
+
+    <input type="submit" value="Search">
+</form>
+<br>
+
+<div *ngIf="center!==undefined">
+    Name is {{center.name | uppercase}}
+  
+</div>
+<br>
+
+
