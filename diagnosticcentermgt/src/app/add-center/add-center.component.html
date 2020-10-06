@@ -9,19 +9,14 @@
 </div>
 
 
-<div>
-    <label>Center id</label>
-    
-    <input type="number" name="centerid" ngModel>    
-</div>
 
 
-<input type="submit" value="Submit">    
+<input type="submit" value="Submit" class="btn btn-primary">    
 </form>
 <br>
 
 <div *ngIf="center!=undefined">
-    <h2>Addcenter</h2>
-    {{center.id}}
+    <h2>Center Added</h2>
+    {{center.centerId}}
     {{center.name}}
     </div>

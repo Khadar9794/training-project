@@ -22,8 +22,8 @@ export class CenterDetailsComponent {
 
   center:Center;
 
-  findCenterById(centerId:number){
-    let observable:Observable<Center>=this.centerService.getCenter(centerId);
+  findCenterById(id:number){
+    let observable:Observable<Center>=this.centerService.getCenter(id);
     observable.subscribe(
       centerArg=>{
         this.center=centerArg;
@@ -33,8 +33,8 @@ export class CenterDetailsComponent {
   }
    findCenter(form:any){
      let data=form.value;
-     let centerId=data.centerId;
-     this.findCenterById(centerId);
+    let id=data.centerId;
+     this.findCenterById(id);
    }
 
 }

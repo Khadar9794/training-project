@@ -4,7 +4,7 @@ export class Center{
 
     constructor(centerId:number,centerName:string){
       this.centerId = centerId;
-      this.centerName = centerName;
+      this.centerName =centerName;
 
        
     }
@@ -13,8 +13,6 @@ export class Center{
         return this.centerName;
       }
 
-      getcenterId():number{
-        return this.centerId;
-      }
+      
     
 }

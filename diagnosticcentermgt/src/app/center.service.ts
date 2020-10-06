@@ -25,6 +25,12 @@ getCenter(centerId:number):Observable<Center>{
     return observable;
 }
 
+getAll():Observable<Center[]>{
+    let url=this.urlPath;
+    let observable:Observable<Center[]>=this.http.get<Center[]>(url);
+    return observable;
+}
+
 removeCenter(centerId:number):Observable<Center[]>{
     let url=this.urlPath+"/remove/"+centerId;
     let observable:Observable<Center[]>=this.http.delete<Center[]>(url);

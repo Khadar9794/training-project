@@ -19,12 +19,19 @@ export class AddCenterComponent {
 
   addCenter(form:any){
    let data=form.value;
-   let name=data.centerName;
-   this.center=new Center(-1,name);
-   let observable:Observable<Center>=this.centerService.addCenter(this.center);
-   observable.subscribe(
-     centerArg=>{this.center=centerArg},
-   );
+   let name=data.name;
+   this.center = new Center(-1, name);
+   let successFun = (centerArg: Center) => {
+    this.center = centerArg;
+  };
+ 
+  let errFun = err => {
+    console.log("err in addcentercomponent " + err.message);
+  }
+
+  let observable: Observable<Center> = this.centerService.addCenter(this.center);
+  observable.subscribe(successFun, errFun);
+ 
   }
 
 }
